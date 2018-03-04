@@ -77,6 +77,8 @@ On your local desktop, open a browser and go to
 
 Verify index "index_test" was created.
 
+![](images/test_elasticsearch.png)
+
 ## Start CoAP server
 	
 On server
@@ -101,6 +103,8 @@ Let's imagine a device which requests from a CoAP server the next action to appl
 
 	sh client.sh coap://server:5683/action GET
 
+![](images/helloWorld_and_action.png)
+
 ### Simulate the monitoring of a volume
 
 Let's imagine a device which monitors a volume and sends periodically its value to a CoAP server.
@@ -109,11 +113,19 @@ Let's imagine a device which monitors a volume and sends periodically its value 
 
 Pay attention to the fact that we have defined a subpath `data` in the resource.
 
+![](images/volume.png)
+
 ### Simulate the monitoring of a position
 
 Let's imagine a device which monitors a position and sends periodically its value to a CoAP server.
 
 	sh client.sh coap://server:5683/data/position POST
+
+![](images/position.png)
+
+## Results on Kibana for POST requests
+
+![](images/kibana_results.png)
 
 ## Analysis of network exchange
 
@@ -122,4 +134,6 @@ Retrieve the file `capture_network_exchange.pcap` on your local desktop by execu
 	docker cp <CONTAINER_ID_of_client>:/home/capture_network_exchange.pcap .
 
 The file format `pcap` is readable with wireshark, thus download `wireshark` and open it. Finally, analyse the packet exchanged.
+
+![](images/wireshark.png)
 
