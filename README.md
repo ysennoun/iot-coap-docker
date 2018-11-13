@@ -60,7 +60,7 @@ On the second terminal, execute
 On server 
 
 	su - elasticuser
-	export JAVA_HOME=/usr/bin/java/jdk1.8.0_161
+	export JAVA_HOME=/usr/bin/java/jdk1.8.0_191
 	./elasticsearch/bin/elasticsearch > /dev/null 2>&1 &
 	exit
 	curl -XPUT 'http://localhost:9200/index_test/messages/first' -H "Content-Type: application/json" -d '{"name" : "xebia & iot-ee"}'
